@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moore Makinesi Simülatörü</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- Üst Bar -->
+    <div class="top-bar">
+      <h1>Moore Makinesi</h1>
+      <button class="blogo" id="theme-toggle" onclick="toggleTheme()">
+        <i class="fa fa-circle-half-stroke"></i>
+      </button>
+    </div>
+
+    <!-- Logo -->
+    <div class="logo-container">
+      <!-- <img src="logo.png" alt="Logo" class="logo" /> -->
+    </div>
+
+    <!-- Ana Konteyner -->
+    <div class="container">
+      <!-- Sol kısım: Giriş alanları -->
+      <div class="section-left">
+        <div class="input-group">
+          <label for="states">Durumlar (örneğin: q0, q1, q2):</label>
+          <input type="text" id="states" placeholder="Durumları virgülle ayırarak girin" />
+        </div>
+        <div class="input-group">
+          <label for="alphabet">Alfabe (örneğin: a, b):</label>
+          <input type="text" id="alphabet" placeholder="Alfabeyi virgülle ayırarak girin" />
+        </div>
+        <div class="input-group">
+          <label for="outputs">Çıkışlar (örneğin: 0, 1):</label>
+          <input
+            type="text"
+            id="outputs"
+            placeholder="Her duruma karşılık çıkan çıkışları virgülle ayırarak girin"
+          />
+        </div>
+      </div>
+
+      <!-- Orta kısım: Geçişler -->
+      <div class="section-center">
+        <div class="input-group">
+          <label for="transitions">Geçişler (örneğin: q0,a=q1; q0,b=q0):</label>
+          <textarea
+            id="transitions"
+            placeholder="Geçişleri şu formatta girin: 'mevcutDurum,giriş=sonrakiDurum'"
+          ></textarea>
+        </div>
+      </div>
+
+      <!-- Sağ kısım: Başlangıç Durumu, Girdi Dizisi ve Simülasyon Çıktısı -->
+      <div class="section-right">
+        <div class="input-group">
+          <label for="startState">Başlangıç Durumu (örneğin: q0):</label>
+          <input type="text" id="startState" placeholder="Başlangıç durumunu girin" />
+        </div>
+        <div class="input-group">
+          <label for="inputString">Girdi Dizisi (örneğin: aaababbaabb):</label>
+          <input type="text" id="inputString" placeholder="Girdi dizisini girin" />
+        </div>
+        <div class="simulation">
+          <button onclick="simulate()">Simüle Et</button>
+          <div class="output-group">
+            <p id="output">Çıkış:</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>ALPER BİLĞİN</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
